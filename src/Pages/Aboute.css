@@ -1,0 +1,26 @@
+.disc{
+    color:white;
+    text-align: justify;
+    word-spacing: 0.5ch;
+    color: grey;
+
+}
+.box{
+    margin: auto;
+    width: 800px;
+    border:3px solid orange;
+    border-radius: 10px;
+    margin-top: 50px;
+    padding:30px 30px;
+    animation-name: moveleft;
+    animation-duration: 0.7s;
+}
+@keyframes moveleft {
+    0%{
+        transform: translateX(1500px);
+    }
+    100%{
+        transform: translate(0);
+    }
+    
+}

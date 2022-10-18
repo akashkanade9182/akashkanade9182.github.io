@@ -1,0 +1,39 @@
+
+
+.bodybox{
+
+    width: 80%;
+    margin: auto;
+    margin-top: 40px;
+    padding:25px 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.card{
+  width: fit-content;
+  animation-name: moveleft;
+  animation-duration: 1s;
+}
+
+@keyframes moveleft {
+  0%{
+    opacity: 0;
+    transform: translateX(200%);
+  }
+  100%{
+    opacity: 1;
+    transform: translate(0);
+  }
+  
+}
+
+
+
+
+  .pic{
+    width: 400px;
+    height:400px;
+    animation-name: moveleft;
+    animation-duration: 1s;
+  }
