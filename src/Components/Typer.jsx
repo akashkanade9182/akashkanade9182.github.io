@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Typer.css"
+
 import Typewriter from "typewriter-effect"
 function Typer() {
   const [state]=React.useState({
@@ -12,15 +13,15 @@ function Typer() {
   return (
   <div className='heading'>
     <div>
-      <h1>Hellow</h1>
+        <h1>Hellow</h1>
     </div>
     <div>
-    <h1>My name is</h1>
-    <h1 >Akash Kanade</h1>
+        <h1>My name is</h1>
+        <h1 >Akash Kanade</h1>
     </div>
     <div>
-      <h1>I ' m a</h1>
-    <h1><Typewriter options={{
+        <h1>I ' m a</h1>
+        <h1><Typewriter options={{
       autoStart:true,
       loop:true,
       delay:40,
@@ -29,9 +30,10 @@ function Typer() {
       ]
     }}/></h1>
     </div>
-    <button className='btn'>
+    <a className='btns' href='../download/Akash-Kanade-Resume.pdf' download><button>
       Download CV
-    </button>
+      </button>
+    </a>
   </div>
   )
 }

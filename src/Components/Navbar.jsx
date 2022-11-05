@@ -1,47 +1,90 @@
 
 import React from 'react'
-import { NavLink } from "react-router-dom";
-
+import { HashLink } from "react-router-hash-link";
+import { NavLink } from 'react-router-dom';
 import { Flex, Spacer,Button,Heading,ButtonGroup,Box } from '@chakra-ui/react'
 import "./Navbar.css"
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
 
+  Input
+  
+
+} from '@chakra-ui/react'
+import {HamburgerIcon,AddIcon} from "@chakra-ui/icons"
+import { IconButton,Wrap,WrapItem,Avatar } from '@chakra-ui/react'
 
 const links = [
-  { path: "/", title: "Home" },
-  { path: "/aboutme", title: "About me" },
-  { path: "/skills", title: "Skills" },
-  { path: "/projects", title: "Projects" },
-  { path: "/contact", title: "Contacts" }
+  { path: "#home", title: "Home" },
+  { path: "#aboutme", title: "About me" },
+  { path: "#skills", title: "Skills" },
+  { path: "#projects", title: "Projects" },
+  { path: "#contact", title: "Contacts" }
 ];
 
 function Navbar() {
   return (
 
 
-<Flex className="navbarbox" border={"1px solid black"}minWidth='max-content' alignItems='center' gap='2'>
-  <Box p='2'>
-    <Heading size='md'>Chakra App</Heading>
+<Box className="navbarbox">
+  <Box p='2' >
+    <Heading  className='logo' size='md'>Akash</Heading>
   </Box>
   <Spacer />
-  <Flex width={"50%"} justifyContent={"space-around"}  p='2'>
+  <Box className='navlink' justifyContent={"space-around"}  p='2'>
   {links.map((link) => (
-        <NavLink
+        
+        <HashLink
           // style={({ isActive }) => {
           //   return isActive ? activeStyle : defaultStyle;
           // }}
-          className={({ isActive }) => {
-            return isActive ?"active" :"default";
-          }}
+          className="active"
+            
+        
           key={link.path}
-          to={link.path}
+         smooth to={link.path}
           end
-        >
-          {link.title}
-        </NavLink>
+        ><div className='link'>
+          {link.title}</div>
+        </HashLink>
       ))}
-  </Flex>
+  </Box>
+ 
+  <Box className="menubutton">
+  <Menu >
+  <MenuButton height="70%"  width="9%" padding={"3"}  as={Button} colorScheme='green'>
+  <HamburgerIcon height="80%"  width="80%" />
+  </MenuButton>
+
+  <MenuList  w={"400px"}>
+  {links.map((link) => (
+      <HashLink 
+      key={link.path}
+     smooth to={link.path}
+      end>
+  <MenuItem className="menuItem" height={"80px"} style={{textDecoration:"none",
+   fontSize:"40px",
+   textAlign:"center",
+   alignItems:"center"}} >{link.title}</MenuItem>
+  </HashLink>
+  )
+  )
+}
+      
+     
+  
+  </MenuList>
+</Menu>
+</Box>
    
-</Flex>
+</Box>
 
 
   )

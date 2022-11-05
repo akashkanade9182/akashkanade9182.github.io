@@ -9,16 +9,29 @@
 
 
 .heading{
-    width: 1000px;
+    width: 500px;
     color:white;
     text-align: center;
+    padding: 10px 10px;
    animation-name: moveright;
    animation-duration: 1s;
    line-height: normal;
+   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+   background-image:linear-gradient(to right bottom ,black  30%,#0a0221  );
+
+   /* -webkit-backdrop-filter: blur(10px);
+   border-radius: 20px;
+   /* border:1px solid rgba(255, 255, 255, 0.18); */
+   box-shadow: 0 8px 32px 0 #5ddcff; ; 
+   padding: 2rem 2rem;
+   border: 1px solie red;
 }
 .heading>div{
     height:70px;
     /* border: 1px solid white; */
+}
+.heading>div>h1{
+    font-size: 1rem;
 }
 @keyframes moveright {
     0%{
@@ -33,7 +46,7 @@
 }
 .heading>div{
     width: fit-content;
-    font-size: 18px;
+  
     margin: auto;
     display: flex;
     justify-content: space-around;
@@ -41,22 +54,62 @@
 
 }
 
+
 .heading>div:nth-child(3)
 {  
     font-family: 'Poppins', sans-serif;
 }
 .heading>div>h1:nth-child(2){
-    color:var(--color-100);
+    color:#5ddcff;
     margin-left: 15px;
+    font-size: 1.3rem;
     font-family: 'Dancing Script', cursive;
 /* font-family: 'Poppins', sans-serif; */
 }
-.btn{
+.heading>div>h1:first-child{
+    font-size: 1.2rem;
+}
+
+.btns{
     border-width: 4px;
     border-radius: 15px;
-    height:45px;
+    text-align: center;
+    background-color: transparent;
     margin-top: 30px;
     color:white;
-    border-color: var(--color-100);
-    background: transparent;
+    border-color:#5ddcff;
+    transition: 0.7s;
+}
+.btns:hover{
+    text-shadow: 0 0 10px #5ddcff,
+    0 0 20px #5ddcff,
+    0 0 20px #5ddcff,
+    0 0 20px #5ddcff,
+    0 0 20px #5ddcff;
+    box-shadow: 0 0 10px #5ddcff,
+    0 0 20px #5ddcff,
+    0 0 20px #5ddcff,
+    0 0 20px #5ddcff,
+    0 0 20px #5ddcff,
+}
+
+@media only screen and (max-width: 600px){
+.heading>div>h1{
+    font-size: 1.8rem;
+    word-spacing: normal;
+   line-height: 2px;
+}
+.heading{
+    margin-top: 5px;
+    width: 80%;
+}
+.heading>div{
+    height:60px
+}
+.heading>div:nth-child(3)>h1:last-child{
+    font-size: 1.5rem;
+}
+.heading>div{
+    margin-top: 60px;
+}
 }

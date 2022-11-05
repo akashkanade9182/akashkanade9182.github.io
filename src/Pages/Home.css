@@ -2,19 +2,17 @@
 
 .bodybox{
 
-    width: 80%;
+    width: 50rem;
+    height:100vh;
     margin: auto;
-    margin-top: 40px;
+    margin-top: 20px;
     padding:25px 25px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    
 }
-.card{
-  width: fit-content;
-  animation-name: moveleft;
-  animation-duration: 1s;
-}
+
 
 @keyframes moveleft {
   0%{
@@ -37,3 +35,99 @@
     animation-name: moveleft;
     animation-duration: 1s;
   }
+  @media only screen and (max-width: 1200px) {
+ .bodybox{
+padding-top: 4rem;
+ }
+ .bodybox>div:last-child>img{
+
+  margin-bottom: 5rem;
+ }
+ 
+   }
+  @media only screen and (max-width: 600px) {
+   .bodybox{
+    margin: auto;
+    width: 30rem;
+    margin-left: 4rem;
+    height: auto;
+   
+  
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+   }
+   .bodybox>div:first-child{
+    width:100%;
+      height: 15rem;
+    margin: auto;
+    margin-top: 40px;
+   }
+   .bodybox>div:last-child{
+    width:75%;
+    height:70%;
+    margin: auto;
+    margin-top: 3rem;
+    border: 2px solid green;
+   }
+   .bodybox>div:last-child>img{
+    width:90%;
+    height: 20rem;
+   }
+ 
+   .bodybox>div:first-child>div{
+    width: 80%;
+    margin: auto;
+    margin-top: 15px;
+   }
+   .bodybox>div>img{
+    width: 200px;
+    height:200px;
+    margin: auto;
+    margin-right: 6px;
+   }
+
+  }
+
+/* 
+
+  @media only screen and (max-width: 412px) {
+    .bodybox{
+     margin: auto;
+     width: 90%;
+   
+     height: auto;
+    
+   
+     display: grid;
+     grid-template-columns: repeat(1,1fr);
+    }
+    .bodybox>div:first-child{
+     width:90%;
+       height: 15rem;
+     margin: auto;
+     margin-top: 40px;
+    }
+    .bodybox>div:last-child{
+     width:75%;
+     height: 20rem;
+     margin: auto;
+     margin-top: 1rem;
+    }
+    .bodybox>div:last-child>img{
+     width:90%;
+     height: 20rem;
+    }
+  
+    .bodybox>div:first-child>div{
+     width: 80%;
+     margin: auto;
+     margin-top: 15px;
+    }
+    .bodybox>div>img{
+     width: 200px;
+     height:200px;
+     margin: auto;
+     margin-right: 6px;
+    }
+ 
+   } */
