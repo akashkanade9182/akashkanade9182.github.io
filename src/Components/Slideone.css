@@ -5,6 +5,7 @@
     height: 100%;
     /* border: 1px solid blue; */
     overflow: hidden;
+    position: static;
     width: 100%;
   }
   

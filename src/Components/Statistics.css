@@ -1,7 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Orbitron&display=swap');
 
 
-
+.statisticsvideo{
+  position: absolute;
+z-index: -1;
+top:400vh;
+left: 0;
+width: 100%;
+height: 100%;
+  object-fit: cover;
+}
 
 
 
@@ -30,7 +38,6 @@
    box-shadow: 0 8px 32px 0 #5ddcff; ;
    padding: 1rem 1rem;
  
-   border: 1px solie red;
 }
 .statisticsbox>div{
   margin: auto;
@@ -59,28 +66,75 @@
 
 @keyframes skills {
     0%{
-           text-shadow: 0 0  40px #64dd17,
-           0 0  40px  #64dd17,
-            0 0  40px #64dd17,
-            0 0  40px #64dd17
+           text-shadow: 0 0  40px #5ddcff,
+           0 0  40px  #5ddcff,
+            0 0  40px #5ddcff,
+            0 0  40px #5ddcff
 
     }
     50%{
-      text-shadow: 0 0  10px #64dd17,
-      0 0  5px #64dd17,
-       0 0  5px #64dd17,
-       0 0  5px #64dd17
+      text-shadow: 0 0  10px #5ddcff,
+      0 0  5px #5ddcff,
+       0 0  5px #5ddcff,
+       0 0  5px #5ddcff
     }
     100%{
-      text-shadow: 0 0  40px #64dd17,
-      0 0  40px  #64dd17,
-       0 0  40px #64dd17,
-       0 0  40px #64dd17
+      text-shadow: 0 0  40px #5ddcff,
+      0 0  40px  #5ddcff,
+       0 0  40px #5ddcff,
+       0 0  40px #5ddcff
     }
     
   }
 
 
+
+
+
+
+  @media only screen and (max-width: 1200px){
+  
+    .statistics{
+      width: 95%;
+     margin: 0 0;
+     padding: 0 0;
+  }
+  .statisticsbox{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+  }
+
+.statisticsbox>div{
+  margin: auto;
+  margin-top: 50px;
+  width: 95%;
+
+}
+.state2{
+  width: 95%;
+  
+}
+.state2>a:first-child>{
+width: 48%;
+margin: auto;
+}
+.state2>a:last-child>{
+  width: 48%;
+  margin: auto;
+  align-items: center;
+}
+.state2>a>img{
+  width: 90%;
+  margin: auto;
+}
+  
+  
+  
+  
+  
+  }
 
 
 
@@ -124,4 +178,57 @@
    
 }
 
+}
+
+@media only screen and (max-width: 413px) {
+  .statistics{
+      width: 100%;
+     
+      height: auto;
+    }
+   .statisticsbox{
+      width: 100%;
+      height: fit-content;
+      margin: auto;
+    
+      margin: auto;
+      height: fit-content;
+    
+      margin-top: 5px;
+      padding: 0 0 ;
+      
+   
+     
+     
+  }
+  .statistics>h1{
+    font-size: 40px;
+  }
+  .statisticsbox>div{
+    margin: auto;
+    margin-top: 50px;
+    width: 95%;
+    /* border: 2px solid red; */
+    margin-top: 10px;
+  }
+  .statisticsbox>div>a>img{
+    width: 100%;
+  }
+  
+ 
+/* .state1{
+  width: 95%;
+  border: 2px solid red;
+}
+.state2{
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+}
+.state2>div{
+  width: 95%;
+  margin: auto;
+} */
+
+  
 }

@@ -9,7 +9,7 @@ const colors = [
       "https://iili.io/bTj5eR.md.png",
       "https://iili.io/bTjlst.md.png"
     ];
-const delay = 2500;
+const delay = 3000;
 
 function Slideone() {
   const [index, setIndex] = React.useState(0);

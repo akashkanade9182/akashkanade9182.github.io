@@ -1,8 +1,10 @@
 import React from 'react'
 import "./Aboute.css"
+import background from "../download/background.mov"
 function Aboute() {
   return (
     <div className="aboutebox" id='aboutme'>
+      <video   className="aboutevideo" src={background} autoPlay loop muted/>
       <div className="fake"></div>
       <h1>Aboute Me</h1>
     <div className='box' >

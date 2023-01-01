@@ -6,7 +6,7 @@ const Calendor = () => {
     const selectLastHalfYear = contributions => {
         const currentYear = new Date().getFullYear();
         const currentMonth = new Date().getMonth();
-        const shownMonths = 7;
+        const shownMonths = 12;
       
         return contributions.filter(day => {
           const date = new Date(day.date);
@@ -26,8 +26,9 @@ const Calendor = () => {
     <GitHubCalendar
     style={{margin:"auto"}}
      username="akashkanade9182" 
-     transformData={selectLastHalfYear}
+    
      blockSize={20}
+     color={"#5ddcff"}
      fontSize={20}
      hideColorLegend={false}
      
@@ -36,7 +37,9 @@ const Calendor = () => {
 
 
       </GitHubCalendar>
-      
+       {/* <GitHubCalendar style={{width:"100%"}} blockSize={20}   color={"#5ddcff"} fontSize={20} username="akashkanade9182">
+</GitHubCalendar>
+       */}
     </div>
     </div>
   )

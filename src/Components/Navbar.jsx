@@ -22,10 +22,11 @@ import {HamburgerIcon,AddIcon} from "@chakra-ui/icons"
 import { IconButton,Wrap,WrapItem,Avatar } from '@chakra-ui/react'
 
 const links = [
-  { path: "#home", title: "Home" },
+ {path:"#home",title:"Home"},
   { path: "#aboutme", title: "About me" },
-  { path: "#skills", title: "Skills" },
+  
   { path: "#projects", title: "Projects" },
+  { path: "#skills", title: "Skills" },
   { path: "#contact", title: "Contacts" }
 ];
 
@@ -39,23 +40,30 @@ function Navbar() {
   </Box>
   <Spacer />
   <Box className='navlink' justifyContent={"space-around"}  p='2'>
-  {links.map((link) => (
+  {
+    links.map((link)=>(
+      <HashLink
+      // style={({ isActive }) => {
+      //   return isActive ? activeStyle : defaultStyle;
+      // }}
+      className="active"
         
-        <HashLink
-          // style={({ isActive }) => {
-          //   return isActive ? activeStyle : defaultStyle;
-          // }}
-          className="active"
-            
-        
-          key={link.path}
-         smooth to={link.path}
-          end
-        ><div className='link'>
-          {link.title}</div>
-        </HashLink>
-      ))}
+    
+      key={link.path}
+     smooth to={link.path}
+      end
+    ><div className='link'>
+      {link.title}</div>
+    </HashLink>
+    ))
+  }
   </Box>
+  <Box>
+  <a className="bns" href='https://drive.google.com/file/d/1BRNUWLamddp8CBMId1ebBs6p5Tf2K00J/view?usp=share_link' download><button className="btns">
+      Download CV
+      </button>
+    </a>
+    </Box>
  
   <Box className="menubutton">
   <Menu >
@@ -63,16 +71,16 @@ function Navbar() {
   <HamburgerIcon height="80%"  width="80%" />
   </MenuButton>
 
-  <MenuList  w={"400px"}>
+  <MenuList  className="menu"  borderRadius={"15px"} w={"200px"}>
   {links.map((link) => (
       <HashLink 
       key={link.path}
      smooth to={link.path}
       end>
-  <MenuItem className="menuItem" height={"80px"} style={{textDecoration:"none",
-   fontSize:"40px",
+  <MenuItem className="menuItem" height={"30px"} style={{textDecoration:"none",
+   fontSize:"15px",
    textAlign:"center",
-   alignItems:"center"}} >{link.title}</MenuItem>
+   alignItems:"center"}} ><p>{link.title}</p></MenuItem>
   </HashLink>
   )
   )

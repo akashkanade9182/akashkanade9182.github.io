@@ -1,10 +1,14 @@
 import React from 'react'
 import "./skill.css"
+import background from "../download/background.mov"
+
 import Calendor from '../Components/Calendor';
 import Statistics from '../Components/Statistics';
 function Skills() {
   return (
     <div className="skillsbox" id='skills'>
+            <video   className="skillsvideo1" src={background} autoPlay loop muted/>
+
        <div className='skillfake'></div>
       <h1>My Skills</h1>
       <div className="gridbox">
@@ -50,8 +54,12 @@ function Skills() {
         </div>
    
       </div>
+      <video   className="skillsvideo2" src={background} autoPlay loop muted/>
+
     
    <Statistics/>
+   <video   className="skillsvideo3" src={background} autoPlay loop muted/>
+
      <Calendor/>
      
       </div>

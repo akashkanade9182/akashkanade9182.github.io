@@ -43,15 +43,15 @@
   }
   @media only screen and (max-width: 1200px){
     .card{
-      height:80%;
-      margin-top: 2rem;
+      height:40%;
+   
       position: static;
     }
   }
   @media only screen and (max-width: 600px){
     .card{
       height:100%;
-      border: 5px  solid red;
+
       position: static;
     }
   }

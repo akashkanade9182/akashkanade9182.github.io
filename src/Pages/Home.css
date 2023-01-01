@@ -2,7 +2,8 @@
 
 .bodybox{
 
-    width: 50rem;
+    width: 90%;
+   
     height:100vh;
     margin: auto;
     margin-top: 20px;
@@ -10,8 +11,38 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    /* border:1px solid red; */
     
 }
+video{
+  position: absolute;
+z-index: -1;
+top:0;
+left: 0;
+width: 100%;
+height: 100%;
+  object-fit: cover;
+}
+.bodybox>div{
+ width: 48%;
+ /* border: 1px solid green; */
+ height: fit-content;
+}
+.bodybox>div:last-child>div{
+width: 60%;
+height: 22rem;
+margin: auto;
+}
+.bodybox>div:last-child>div>img{
+    width: 100%;
+  margin: auto;
+  }
+  .bodybox>div:first-child>div{
+    width: 100%;
+    height: 22rem;
+    margin: auto;
+    }
+
 
 
 @keyframes moveleft {
@@ -30,19 +61,26 @@
 
 
   .pic{
-    width: 400px;
+    width: 95%;
     height:400px;
     animation-name: moveleft;
     animation-duration: 1s;
   }
   @media only screen and (max-width: 1200px) {
  .bodybox{
-padding-top: 4rem;
+  width: 60rem;
+ height: 40rem;
+/* padding-top: 4rem; */
+ }
+ .bodybox>div:last-child>div {
+  width: 80%;
+  height: 22rem;
  }
  .bodybox>div:last-child>img{
 
   margin-bottom: 5rem;
  }
+
  
    }
   @media only screen and (max-width: 600px) {
@@ -58,76 +96,46 @@ padding-top: 4rem;
    }
    .bodybox>div:first-child{
     width:100%;
-      height: 15rem;
     margin: auto;
     margin-top: 40px;
+    display: flex;
+    align-content: center;
+    align-items: center;
    }
    .bodybox>div:last-child{
-    width:75%;
-    height:70%;
+    width:100%;
     margin: auto;
     margin-top: 3rem;
-    border: 2px solid green;
-   }
-   .bodybox>div:last-child>img{
-    width:90%;
-    height: 20rem;
-   }
- 
-   .bodybox>div:first-child>div{
-    width: 80%;
-    margin: auto;
-    margin-top: 15px;
-   }
-   .bodybox>div>img{
-    width: 200px;
-    height:200px;
-    margin: auto;
-    margin-right: 6px;
    }
 
   }
 
-/* 
 
-  @media only screen and (max-width: 412px) {
+   @media only screen and (max-width: 413px) {
     .bodybox{
-     margin: auto;
-     width: 90%;
-   
-     height: auto;
-    
-   
-     display: grid;
-     grid-template-columns: repeat(1,1fr);
+        width: 22rem;
+        height: fit-content;
+        margin: auto;
+       }
+       .bodybox>div{
+        width: 100%;
+        height: auto;
+        margin: auto;
+       }
+       .bodybox>div:first-child>div {
+        margin: 0;
+        height:17rem;
+    } 
+    .bodybox>div:last-child>div{
+      width: 90%;
+      height: 255px;
+      margin: auto;
+      }
+
+    .pic{
+      height: 255px;
     }
-    .bodybox>div:first-child{
-     width:90%;
-       height: 15rem;
-     margin: auto;
-     margin-top: 40px;
-    }
-    .bodybox>div:last-child{
-     width:75%;
-     height: 20rem;
-     margin: auto;
-     margin-top: 1rem;
-    }
-    .bodybox>div:last-child>img{
-     width:90%;
-     height: 20rem;
-    }
-  
-    .bodybox>div:first-child>div{
-     width: 80%;
-     margin: auto;
-     margin-top: 15px;
-    }
-    .bodybox>div>img{
-     width: 200px;
-     height:200px;
-     margin: auto;
-     margin-right: 6px;
-    }
- 
-   } */
+     
+       
+     
+  }

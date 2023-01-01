@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Dancing+Script&family=Poppins:ital,wght@1,700&family=Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Orbitron&display=swap');
 
 
 
@@ -20,6 +21,16 @@
 
 
 }
+.aboutevideo{
+    position: absolute;
+    z-index: -1;
+    top:100vh;
+    left: 0;
+    width: 100%;
+    height: 100%;
+      object-fit: cover;
+ }
+
 .aboutebox>h1{
     font-size: 40px;
     color: white;
@@ -85,7 +96,7 @@
 
  @media only screen and (max-width: 1200px) {
     .aboutebox{
-     width: 50rem;
+     width: 60rem;
      height: fit-content;
      padding: 0.5rem;
      margin: auto;
@@ -110,7 +121,6 @@
    }
    .aboutebox>h1{
     font-size: 2rem;
-    font-family: 'Orbitron', sans-serif;;
 }
    .box{
     width:80%;
@@ -118,3 +128,32 @@
     font-size:1rem;
    }
 }
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 413px) {
+    .aboutebox{
+        width: 20rem;
+        height: fit-content;
+        padding: 0.5rem;
+        margin: auto;
+       }
+       .aboutebox>h1{
+        font-size: 50px;
+    }
+       .box{
+        width:80%;
+        height:fit-content;
+        font-size:1rem;
+       }
+       .disc {
+        font-size: 1rem;
+    }
+    
+  }

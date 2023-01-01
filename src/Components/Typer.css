@@ -9,7 +9,7 @@
 
 
 .heading{
-    width: 500px;
+    width: 90%;
     color:white;
     text-align: center;
     padding: 10px 10px;
@@ -24,14 +24,20 @@
    /* border:1px solid rgba(255, 255, 255, 0.18); */
    box-shadow: 0 8px 32px 0 #5ddcff; ; 
    padding: 2rem 2rem;
-   border: 1px solie red;
 }
 .heading>div{
     height:70px;
+    width: 80%;
     /* border: 1px solid white; */
 }
-.heading>div>h1{
-    font-size: 1rem;
+.heading>div:first-child{
+    width: 80%;
+}
+.heading>div:first-child>h1{
+    font-size: 2.5rem;
+}
+.heading>div>h1:first-child{
+    font-size: 2rem;
 }
 @keyframes moveright {
     0%{
@@ -50,8 +56,8 @@
     margin: auto;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     
-
 }
 
 
@@ -62,25 +68,59 @@
 .heading>div>h1:nth-child(2){
     color:#5ddcff;
     margin-left: 15px;
-    font-size: 1.3rem;
+    font-size: 2rem;
+    color: white;
     font-family: 'Dancing Script', cursive;
+    text-shadow: 0 0 10px #5ddcff,
+    0 0 20px #5ddcff,
+    0 0 20px #5ddcff,
+    0 0 20px #5ddcff,
+    0 0 20px #5ddcff;
+    animation :typewriter 2s linear infinite;
+
 /* font-family: 'Poppins', sans-serif; */
 }
 .heading>div>h1:first-child{
-    font-size: 1.2rem;
+    font-size: 2rem;
+    color:#5ddcff;
 }
 
-.btns{
+@keyframes typewriter {
+    0%{
+           text-shadow: 0 0  20px #5ddcff,
+           0 0  20px  #5ddcff,
+            0 0  20px #5ddcff,
+            0 0  20px #5ddcff
+
+    }
+    50%{
+      text-shadow: 0 0  10px #5ddcff,
+      0 0  5px #5ddcff,
+       0 0  5px #5ddcff,
+       0 0  5px #5ddcff
+    }
+    100%{
+      text-shadow: 0 0  20px #5ddcff,
+      0 0  20px  #5ddcff,
+       0 0  20px #5ddcff,
+       0 0  20px #5ddcff
+    }
+    
+  }
+.btns>button{
+    height:3rem;
     border-width: 4px;
     border-radius: 15px;
     text-align: center;
     background-color: transparent;
     margin-top: 30px;
-    color:white;
+    color:#5ddcff;
     border-color:#5ddcff;
     transition: 0.7s;
+    padding: 0.5rem 0.5rem;
 }
-.btns:hover{
+.btns>button:hover{
+    color:white;
     text-shadow: 0 0 10px #5ddcff,
     0 0 20px #5ddcff,
     0 0 20px #5ddcff,
@@ -93,23 +133,62 @@
     0 0 20px #5ddcff,
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width: 600px){
-.heading>div>h1{
-    font-size: 1.8rem;
-    word-spacing: normal;
-   line-height: 2px;
+ .heading.div{
+    border:1px solid white
+ }
 }
+
+
+
+@media only screen and (max-width: 413px) {
 .heading{
-    margin-top: 5px;
-    width: 80%;
+    width:100% ;
+    height: fit-content;
+    padding: 10px 0px;
 }
-.heading>div{
-    height:60px
+.heading>div>{
+    width: 100%;
+    border: 1px solid white;
+    height: 43px;
+ 
 }
-.heading>div:nth-child(3)>h1:last-child{
-    font-size: 1.5rem;
+.heading>div>h1:first-child{
+    font-size: 1.3rem;
 }
-.heading>div{
-    margin-top: 60px;
+.heading>div>h1:nth-child(2){
+    font-size: 1.3rem;
 }
+.heading>div:first-child{
+    height: 43px;
+}
+.heading>div:nth-child(2){
+    height: 43px;
+}
+.heading>div:last-child{
+    height: 43px;
+}
+.btns>button{
+    margin-top: 18px;
+}
+
+
+
+
+
 }

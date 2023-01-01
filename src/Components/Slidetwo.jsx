@@ -11,7 +11,7 @@ const colors = [
      "https://iili.io/DXwKPf.md.png",
       "https://iili.io/DXw7Kx.md.png"
     ];
-const delay = 2500;
+const delay = 3000;
 
 function Slidetwo() {
   const [index, setIndex] = React.useState(0);

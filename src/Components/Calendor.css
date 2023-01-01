@@ -41,30 +41,30 @@
 
 @keyframes skills {
     0%{
-           text-shadow: 0 0  40px #64dd17,
-           0 0  40px  #64dd17,
-            0 0  40px #64dd17,
-            0 0  40px #64dd17
+           text-shadow: 0 0  40px #5ddcff,
+           0 0  40px  #5ddcff,
+            0 0  40px #5ddcff,
+            0 0  40px #5ddcff
 
     }
     50%{
-      text-shadow: 0 0  10px #64dd17,
-      0 0  5px #64dd17,
-       0 0  5px #64dd17,
-       0 0  5px #64dd17
+      text-shadow: 0 0  10px #5ddcff,
+      0 0  5px #5ddcff,
+       0 0  5px #5ddcff,
+       0 0  5px #5ddcff
     }
     100%{
-      text-shadow: 0 0  40px #64dd17,
-      0 0  40px  #64dd17,
-       0 0  40px #64dd17,
-       0 0  40px #64dd17
+      text-shadow: 0 0  40px #5ddcff,
+      0 0  40px  #5ddcff,
+       0 0  40px #5ddcff,
+       0 0  40px #5ddcff
     }
     
   }
   
  @media only screen and (max-width: 1200px) {
     .calendore{
-     width: 50rem;
+     width: 70rem;
      height: fit-content;
      padding: 0.5rem;
      margin: auto;
@@ -73,8 +73,66 @@
      font-size: 2rem;
  }
     .calendorbox{
-     width:80%;
+     width:95%;
      height:fit-content;
      font-size:1rem;
     }
+ }
+
+
+
+
+ @media only screen and (max-width: 413px) {
+   .calendor{
+       width: 100%;
+      
+       height: auto;
+       display: none;
+     }
+    ..calendorbox{
+       width: 100%;
+       height: fit-content;
+       margin: auto;
+     
+       margin: auto;
+       height: fit-content;
+     
+       margin-top: 5px;
+       padding: 0 0 ;
+       font-size: 15px;
+       
+    
+      
+      
+   }
+   .statistics>h1{
+     font-size: 40px;
+   }
+   .statisticsbox>div{
+     margin: auto;
+     margin-top: 50px;
+     width: 95%;
+     /* border: 2px solid red; */
+     margin-top: 10px;
+   }
+   .statisticsbox>div>a>img{
+     width: 100%;
+   }
+   
+  
+ /* .state1{
+   width: 95%;
+   border: 2px solid red;
+ }
+ .state2{
+   width: 95%;
+   display: flex;
+   flex-direction: column;
+ }
+ .state2>div{
+   width: 95%;
+   margin: auto;
+ } */
+ 
+   
  }

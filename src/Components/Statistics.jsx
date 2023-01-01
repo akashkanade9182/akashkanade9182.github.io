@@ -1,9 +1,11 @@
 import "./Statistics.css"
 import React from 'react'
-
+import background from "../download/background.mov"
 const Statistics = () => {
   return (
     <div className="statistics">
+            <video   className="statisticsvide" src={background} autoPlay loop muted/>
+
         <h1 className="stateheading">Github Statistics</h1>
         <div className="statisticsbox">
           <div className="state1" style={{margin:"auto"}}>
