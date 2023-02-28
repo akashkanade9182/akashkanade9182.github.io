@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Dancing+Script&family=Poppins:ital,wght@1,700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
+
 
 .navbarbox{
     border-radius:7px;
@@ -9,6 +11,7 @@
    display: flex;
    align-items: center;
     margin: auto;
+    z-index: 1;
     
   
     position: fixed;
@@ -32,7 +35,8 @@
   width: 98%;
   margin: auto;
   text-decoration: none;
-  background-color:#03bcf4;
+background-color: black;
+ border:2px solid #5ddcff;
   height: 35px;
   text-align: center;
   display: flex;
@@ -49,16 +53,18 @@
 .menuItem>p{
   margin-left: 70px;
   padding: 5px 0;
-  font-size:20px ;
+  font-size:30px ;
   margin-top: 15px;
-  color: white;
+  color: #5ddcff;
+  font-weight: bold;
 }
 
 .css-1l1kldz{
  height:400px;
 }
 .css-1l1kldz{
- background-color: green;
+ background-color: transparent;
+ border:3px solid #03bcf4; 
  height: 50px;
  text-align: center;
 }
@@ -70,6 +76,7 @@
 .active {
     text-decoration: none;
     color: #ff8f00;
+    /* background-color: #039ba1; */
   }
   .default{
     text-decoration: none;
@@ -86,6 +93,7 @@ justify-content: space-around;
     color: white;
     text-decoration: none;
     width: fit-content;
+    font-family: 'Days One', sans-serif;
   }
 
   .link:hover{
@@ -99,6 +107,7 @@ justify-content: space-around;
   }
 
   .logo{
+    font-size: 30px;
     font-family: 'Cinzel Decorative', cursive;
     /* font-family: 'Dancing Script', cursive; */
     /* font-family: 'Poppins', sans-serif; */
@@ -130,8 +139,9 @@ justify-content: space-around;
   }
 
   
-.bns>button{
+  .cv{
   height:3rem;
+  width: auto;
   border-width: 4px;
   border-radius: 15px;
   text-align: center;
@@ -142,7 +152,7 @@ justify-content: space-around;
   transition: 0.7s;
   padding: 0.5rem 0.5rem;
 }
-.bns>button:hover{
+.cv{
   color:white;
   text-shadow: 0 0 10px #5ddcff,
   0 0 20px #5ddcff,
@@ -163,8 +173,12 @@ justify-content: space-around;
 
 
   @media only screen and (max-width: 1200px) {
-
-
+    .cv{
+      width:125px;
+      }
+      .link{
+        font-size: 15px;
+      }
 
   }
 
@@ -172,6 +186,7 @@ justify-content: space-around;
     .navbarbox{
       width: 95%;
       height: 4rem;
+    margin: auto;
     }
 
     .menubutton{
@@ -195,8 +210,13 @@ justify-content: space-around;
        0 0  5px #03bcf4
     
   }
-  .bns{
-    display: none;
+  
+
+.cv{
+width:125px;
+}
+  .logo{
+    font-size: 20px;
   }
 }
 
@@ -206,7 +226,7 @@ justify-content: space-around;
 @media only screen and (max-width: 413px) {
 
   .navbarbox{
-    width: 22rem;
+    width: 95%;
     height: 3rem;
     margin: auto;
     display: flex;
@@ -240,9 +260,9 @@ justify-content: space-around;
      0 0  5px #03bcf4
   
 }
-.bns{
-  display: none;
-}
+.cv{
+  width:125px;
+  }
 
 
 }

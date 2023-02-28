@@ -19,8 +19,9 @@ function App() {
 
 
 
-     
-     
+     <ChakraProvider>
+
+   
       
      <Navbar/>
    <Home/> 
@@ -34,7 +35,7 @@ function App() {
    {/* <Slideone/> */}
   
   
-  
+   </ChakraProvider>
  
 
     </div>

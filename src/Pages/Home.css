@@ -66,6 +66,16 @@ margin: auto;
     animation-name: moveleft;
     animation-duration: 1s;
   }
+  .imagebox{
+
+
+    background: linear-gradient(135deg, rgb(114, 114, 223) 60%, rgb(0, 55, 255));
+    }
+
+  
+
+
+
   @media only screen and (max-width: 1200px) {
  .bodybox{
   width: 60rem;
@@ -89,6 +99,7 @@ margin: auto;
     width: 30rem;
     margin-left: 4rem;
     height: auto;
+   
    
   
     display: grid;

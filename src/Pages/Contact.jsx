@@ -1,5 +1,7 @@
 import React from 'react'
 import './Contact.css'
+import {Flex,Box} from "@chakra-ui/react"
+
 import { Field, Form, Formik } from 'formik';
 import {
   FormControl,
@@ -37,13 +39,19 @@ function Contact() {
   }
   
   return (
-    <div  className="contact" id="contact">
+    <Box className="contact"
+     id="contact"
+     w={["100%","100%","100%","100%"]}
+     h={["auto","auto","auto","auto"]}
+    //  border={"1px solid red"}
+   
+     >
       <h1>Contacts</h1>
-      <div className='contactbox'>
-        <div className='contactdetails'>
+      <Box className='contactbox'>
+        <Box className='contactdetails'>
         <div className='tool'>
          
-        <FiPhone/> <div><span fontWeight="bold">Mob No </span><span>:-+918668696097</span></div>
+        <FiPhone/> <div><span fontWeight="bold">Mob No </span><span> :- +918668696097</span></div>
         </div>
         <div className='tool'>
      
@@ -58,8 +66,8 @@ function Contact() {
      
      <BsCursorFill/><div><span >Linked In :- </span><a href="https://www.linkedin.com/in/akash-kanade-59ab8218b" target="_blank" rel="noopener noreferrer"><span>akashkanade</span></a></div>
     </div>
-    <div>
-    <a className="bns" href='https://drive.google.com/file/d/1BRNUWLamddp8CBMId1ebBs6p5Tf2K00J/view?usp=share_link' download><button >
+    <div style={{display:"flex",justifyContent:"space-around"}}>
+    <a className="bns" href='https://drive.google.com/file/d/1BRNUWLamddp8CBMId1ebBs6p5Tf2K00J/view?usp=share_link'  target="_blank" rel="noopener noreferrer" download><button >
       Download CV
       </button>
     </a>
@@ -69,7 +77,7 @@ function Contact() {
          
 
 
-        </div>
+        </Box>
         <div className='contactinput'>
              <h1>Message me</h1>
              <FormControl isRequired>
@@ -80,14 +88,14 @@ function Contact() {
   <FormLabel>Message</FormLabel>
   <Input border={"none"} borderBottom={"1px solid #5ddcff"} background={"transparent"}  height={"3.5rem"} placeholder='emter message' width={"95%"} />
 </FormControl>
-<Button onClick={()=>alert("thank you for visiting")} className='subbtn' background={"transparent"} color="#5ddcff" width="20%">Submit</Button>
+<Button onClick={()=>alert("thank you for visiting")} className='subbtn' background={"transparent"} color="#5ddcff" width="auto" p={"0 10px"}>Submit</Button>
 
 
         </div>
 
-      </div>
+      </Box>
       
-    </div>
+    </Box>
   )
 }
 

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Dancing+Script&family=Poppins:ital,wght@1,700&family=Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Orbitron&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
 
 
 
@@ -10,14 +11,18 @@
     color:white;
     text-align: justify;
     word-spacing: 0.5ch;
-    color: #5ddcff;
-
+    /* color: #5ddcff; */
+    font-family: 'Days One', sans-serif;
+    font-weight:lighter;
+    padding: 20px 20px;
 }
 .aboutebox{
     width: 90%;
     margin-top: 30px;
     height: auto;
     margin: auto;
+    
+    
 
 
 }
@@ -34,7 +39,9 @@
 .aboutebox>h1{
     font-size: 40px;
     color: white;
-    font-family:'Marck Script', cursive;
+    /* font-family:'Marck Script', cursive; */
+    font-family: 'Days One', sans-serif;
+
     animation :aboute 2s linear infinite;
    
 }
@@ -65,20 +72,29 @@
   
    
     width: 45rem;
-    border:3px solid orange;
     border-radius: 10px;
    
     padding:30px 30px;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
    
     -webkit-backdrop-filter: blur(10px);
-    border-radius: 20px;
-    border:1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px 0 #5ddcff; ;     animation-name: moveleft;
+    /* border-radius: 20px; */
+    /* border:1px solid rgba(255, 255, 255, 0.18); */
+    /* box-shadow: 0 8px 32px 0 #5ddcff; ;     animation-name: moveleft; */
     animation-duration: 0.7s;
     margin-top: 25px;
+    /* clip-path: polygon(14% 0%,100% 1%,100% 65%,87% 78%,1% 79%,1% 13%); */
+    background: url(/public/Shape-block.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+    background-size: cover;
+    background-image:linear-gradient(to right bottom ,black  ,#0a0221  );
+    background: linear-gradient(275deg, rgba(135, 255, 241, 0.3), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(50px);
+    
 }
-@keyframes moveleft {
+    @keyframes moveleft {
     0%{
         transform: translateX(1500px);
     }
@@ -108,6 +124,12 @@
      width:80%;
      height:fit-content;
      font-size:1rem;
+     font-family: 'Days One', sans-serif;
+     color: white;
+     background-repeat: no-repeat;
+     background-size: auto;
+     background-size: 100%;
+    background-size: cover;
     }
  }
 
@@ -126,6 +148,10 @@
     width:80%;
     height:fit-content;
     font-size:1rem;
+    background-image: none;
+    background: rgba(128, 232, 255, 0.05);
+    border: 1px solid rgba(135, 255, 241, 0.3);
+
    }
 }
 
@@ -151,6 +177,11 @@
         width:80%;
         height:fit-content;
         font-size:1rem;
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-size: 100%;
+        background-size: cover;
+
        }
        .disc {
         font-size: 1rem;

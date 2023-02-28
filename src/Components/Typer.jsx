@@ -30,7 +30,7 @@ function Typer() {
       ]
     }}/></h1>
     </div>
-    <a className="btns" href='https://drive.google.com/file/d/1BRNUWLamddp8CBMId1ebBs6p5Tf2K00J/view?usp=share_link' download><button className="btns">
+    <a className="btns" href='https://drive.google.com/file/d/1BRNUWLamddp8CBMId1ebBs6p5Tf2K00J/view?usp=share_link'  target="_blank" rel="noopener noreferrer" download><button className="btns">
       Download CV
       </button>
     </a>

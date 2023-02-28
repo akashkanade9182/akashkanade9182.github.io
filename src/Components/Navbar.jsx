@@ -34,11 +34,11 @@ function Navbar() {
   return (
 
 
-<Box className="navbarbox">
+<Box className="navbarbox" w={["99%","95%","95%","95%"]} m="auto" display="flex" justifyContent={"space-around"}>
   <Box p='2' >
-    <Heading  className='logo' size='md'>Akash</Heading>
+    <Heading  className='logo' size='lg' fontSize={[ "30px","30px","40px","60px"]}>Akash</Heading>
   </Box>
-  <Spacer />
+  
   <Box className='navlink' justifyContent={"space-around"}  p='2'>
   {
     links.map((link)=>(
@@ -59,7 +59,7 @@ function Navbar() {
   }
   </Box>
   <Box>
-  <a className="bns" href='https://drive.google.com/file/d/1BRNUWLamddp8CBMId1ebBs6p5Tf2K00J/view?usp=share_link' download><button className="btns">
+  <a href='https://drive.google.com/file/d/1BRNUWLamddp8CBMId1ebBs6p5Tf2K00J/view?usp=share_link'  target="_blank" rel="noopener noreferrer" download><button className="cv">
       Download CV
       </button>
     </a>
@@ -67,19 +67,20 @@ function Navbar() {
  
   <Box className="menubutton">
   <Menu >
-  <MenuButton height="70%"  width="9%" padding={"3"}  as={Button} colorScheme='green'>
+  <MenuButton height="70%"  width="9%" padding={"3"}  as={Button} colorScheme="#5ddcff">
   <HamburgerIcon height="80%"  width="80%" />
   </MenuButton>
 
-  <MenuList  className="menu"  borderRadius={"15px"} w={"200px"}>
+  <MenuList  className="menu"  borderRadius={"15px"} w={["400px","400px",0,0]} bg={"transparent"}>
   {links.map((link) => (
       <HashLink 
       key={link.path}
      smooth to={link.path}
       end>
-  <MenuItem className="menuItem" height={"30px"} style={{textDecoration:"none",
-   fontSize:"15px",
+  <MenuItem className="menuItem" height={"40px"} w="90%" style={{textDecoration:"none",
+   fontSize:"20px",
    textAlign:"center",
+   height:"auto",
    alignItems:"center"}} ><p>{link.title}</p></MenuItem>
   </HashLink>
   )

@@ -4,15 +4,21 @@ import background from "../download/background.mov"
 
 import Calendor from '../Components/Calendor';
 import Statistics from '../Components/Statistics';
+import {Box,Flex} from "@chakra-ui/react"
+
 function Skills() {
   return (
-    <div className="skillsbox" id='skills'>
-            <video   className="skillsvideo1" src={background} autoPlay loop muted/>
+    <Box className="skillsbox" 
+     id='skills'
+      //  border={"1px solid red"} 
+       w={["100%","100%","100%","100%"]}
+       h={["auto","auto","auto","auto"]}>
+            {/* <video   className="skillsvideo1" src={background} autoPlay loop muted/> */}
 
        <div className='skillfake'></div>
       <h1>My Skills</h1>
-      <div className="gridbox">
-        <div className='skillcard'>
+      <Box  w={["90%","90%","95%","90%"]} className="gridbox">
+        <div className='skillcard' background="url(/public/Shape-block.png)">
         <img   src="https://chiranjeev-thapliyal.vercel.app/svg/html-5.svg" alt='err'/>
           <p>HTML 5</p>
         </div>
@@ -53,16 +59,16 @@ function Skills() {
         <p>Git</p>
         </div>
    
-      </div>
-      <video   className="skillsvideo2" src={background} autoPlay loop muted/>
+      </Box>
+      {/* <video   className="skillsvideo2" src={background} autoPlay loop muted/> */}
 
     
    <Statistics/>
-   <video   className="skillsvideo3" src={background} autoPlay loop muted/>
+   {/* <video   className="skillsvideo3" src={background} autoPlay loop muted/> */}
 
      <Calendor/>
      
-      </div>
+      </Box>
   )
 }
 

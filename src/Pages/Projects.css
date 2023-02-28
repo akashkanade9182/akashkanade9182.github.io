@@ -4,6 +4,7 @@
     inherits: false;
   }
   @import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Orbitron&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
 
 
   .fakebox{
@@ -26,7 +27,7 @@
     width: 95%;
     height: fit-content;
     margin: auto;
-    margin-top: 150px;
+    margin-top: 40px;
     /* border: 1px solid red; */
     
    text-align: center;
@@ -47,6 +48,8 @@
   color: white;
   font-family:'Marck Script', cursive;
   animation :aboute 2s linear infinite;
+  font-family: 'Days One', sans-serif;
+
  
 }
 @keyframes aboute {
@@ -78,12 +81,20 @@
   height:40rem;
  
     border-radius: 8px;
-    
+/*     
     background-image: linear-gradient(
       var(--rotate)
       , #5ddcff,transparent  43%,transparent );
      
-      animation: spinback 2.5s linear infinite;
+      animation: spinback 2.5s linear infinite; */
+      /* background: url(/public/Shape-block.png); */
+      background: linear-gradient(275deg, rgba(135, 255, 241, 0.3), rgba(255, 255, 255, 0));
+      backdrop-filter: blur(20px);
+      /* -webkit-backdrop-filter: blur(5px); */
+  
+      border: 1px solid rgba(135, 255, 241, 0.3);
+      padding:10px 10px;
+      height: 800px;
      
 
 
@@ -105,7 +116,7 @@
     display:flex;
     flex-direction: column;
  
-    background-image:linear-gradient(black,#0a0221);
+    /* background-image:linear-gradient(black,#0a0221); */
 }
 
 /*******links*********/
@@ -113,63 +124,75 @@
   margin: auto;
   width: 95%;
   height:50%;
+
 }
 .details{
   width: 95%;
   margin: auto;
-  height: 60%;
-  border:1px solid #5ddcff;
+  height: 50%;
+  /* border:1px solid #5ddcff; */
+  border: 2px solid rgba(135, 255, 241, 0.3);
+
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   padding:0.2rem 0.5rem;
-  background-image:linear-gradient(to right bottom ,black  30%,#0a0221  );
+  /* background-image:linear-gradient(to right bottom ,black  30%,#0a0221  ); */
   
   ;
 }
 .title{
   width: 90%;
 
-  color: #5ddcff;
+  color: white;
   font-size: 1.5rem;
   text-align: left;
-  font-weight: bold;
+  /* font-weight: bold; */
   justify-content: center;
+  font-family: 'Days One', sans-serif;
 }
 
 .tool{
   width: 90%;
 
-  color: #5ddcff;
+  color: white;
   font-size: 1rem;
   margin-top: 0.1rem;
   text-align: left;
+  font-family: 'Days One', sans-serif;
  
   justify-content: center;
 }
 .features{
   width: 90%;
   height:fit-content;
-  color: #5ddcff;
+  /* color: #5ddcff; */
+  color:white;
   font-size: 0.9rem;
   margin-top: 0.4rem;
   text-align: left;
   line-height:15px;
+  margin-top: 1rem;
+  font-family: 'Days One', sans-serif;
  
 }
 .features>h6{
-  margin-top: 0.5rem;
+  margin-top: 1rem;
+  font-family: 'Days One', sans-serif;
 }
-.features>div{
+/* .features>div{
   display: grid;
   height: fit-content;
   grid-template-columns: repeat(2,1fr);
   justify-content: center;
+} */
+.features>div>p{
+  margin-top: 3px;
 }
 .links{
   width: 90%;
   height:10% ;
-  margin-top: 0.05rem;
+  margin-top: 1rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -179,6 +202,8 @@
   border: 2px solid #5ddcff;
   color: #5ddcff;
   border-radius: 7px ;
+  padding:0 10px;
+  font-family: 'Days One', sans-serif;
 }
 .links>a>button:hover{
  box-shadow: 0 0 5px #5ddcff,
@@ -228,6 +253,7 @@
   width: 98%;
   height: fit-content;
   display: flex;
+  flex-direction: column;
   padding: 0.05rem 0.05rem;
   /* border:1px solid yellow */
 }
@@ -235,13 +261,13 @@
   width: 99%;
   margin: auto;
   height:99%;
-  display: flex;
-  flex-direction: row;
+  display: block;
   /* border:1px solid blue */
 }
 .slides{
-  width: 45%;
-  height: 99%;
+  width: 99%;
+  height: fit-content;
+  margin:auto;
   /* border:1px solid pink */
 }
 .slide>div{
@@ -249,8 +275,9 @@
   height: 100%;
 }
 .details{
-  width: 55%;
-  height: 98%;
+  width: 99%;
+  height: fit-content;
+  margin:auto;
   /* border:1px solid blueviolet; */
   flex-direction: column;
   justify-content: space-around;
@@ -290,7 +317,7 @@
 .links{
   width: 90%;
   height:10% ;
-  margin-top: 0.05rem;
+  margin-top: 1rem;
 }
 .links>button{
   background-color: transparent;
@@ -339,7 +366,7 @@
 }
 .projectcard{
   width: 98%;
-  height: 39rem;
+  height:fit-content;
   display: flex;
   padding: 0.05rem 0.05rem;
   /* border:1px solid yellow */
@@ -354,12 +381,12 @@
 .slides{
   width: 95%;
   margin: auto;
-  height: 50%;
+  height: fit-content;
   /* border:1px solid pink */
 }
 .details{
   width: 95%;
-  height: 50%;
+  height: auto;
   /* border:1px solid blueviolet; */
   flex-direction: column;
   justify-content: space-around;
@@ -399,7 +426,7 @@
 .links{
   width: 90%;
   height:10% ;
-  margin-top: 0.05rem;
+  margin-top: 1rem;
 }
 .links>button{
   background-color: transparent;
@@ -426,13 +453,13 @@
 
 
 
-@media only screen and (max-width: 413px) {
+@media only screen and (max-width: 414px) {
   .projectsbox{
     width: 20rem;
    
     height: auto;
   }
- .projectsgridbox{
+ /* .projectsgridbox{
     width: 95%;
     height: fit-content;
     margin: auto;
@@ -441,7 +468,7 @@
      flex-direction: column;
     grid-gap:2rem;
    
-}
+} */
 
 .projectsgridbox>div{
   width: 98%;
@@ -453,6 +480,13 @@
   font-size: 10px;
   height: fit-content;
   padding: 0.5rem 0.5rem;
+}
+.fakebox{
+  height: 20px;
+ 
+}
+.projectcard{
+  height: auto;
 }
 
 }
