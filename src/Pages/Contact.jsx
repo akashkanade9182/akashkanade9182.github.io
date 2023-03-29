@@ -81,11 +81,11 @@ function Contact() {
         <div className='contactinput'>
              <h1>Message me</h1>
              <FormControl isRequired>
-  <FormLabel>Name</FormLabel>
+  <FormLabel color="white">Name</FormLabel>
   <Input  border={"none"} borderBottom={"1px solid #5ddcff"} background={"transparent"}  placeholder='enter name' width={"95%"} />
-  <FormLabel>Email</FormLabel>
+  <FormLabel color="white">Email</FormLabel>
   <Input  border={"none"} borderBottom={"1px solid #5ddcff"} background={"transparent"}  placeholder='enter email' width={"95%"} />
-  <FormLabel>Message</FormLabel>
+  <FormLabel color="white" >Message</FormLabel>
   <Input border={"none"} borderBottom={"1px solid #5ddcff"} background={"transparent"}  height={"3.5rem"} placeholder='emter message' width={"95%"} />
 </FormControl>
 <Button onClick={()=>alert("thank you for visiting")} className='subbtn' background={"transparent"} color="#5ddcff" width="auto" p={"0 10px"}>Submit</Button>

@@ -3,12 +3,12 @@ import "./Slideone.css"
 
 
 const colorss = [
-  "https://iili.io/HnPoPiF.md.png",
-  "https://iili.io/HnPxoW7.md.png",
-  "https://iili.io/HnPxWdJ.md.png",
-  "https://iili.io/HnPxIfe.md.png",
-  "https://iili.io/HnPxr7f.md.png",
-  "https://iili.io/HnPxLL7.md.png"
+  "https://iili.io/HNroucJ.md.png",
+  "https://iili.io/HNrzi6F.md.png",
+  "https://iili.io/HNrxaJj.md.png",
+  "https://iili.io/HNrxX0g.md.png",
+  "https://iili.io/HNrxp1e.md.png",
+  "https://iili.io/HNrIzP9.md.png"
     ];
 const delay = 3000;
 

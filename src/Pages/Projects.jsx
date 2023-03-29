@@ -150,29 +150,33 @@ const Projects = () => {
             </div>
             <div className='details'>
               <div className='title' color='#5ddcff'>
-                <span>Title :- Deccon Chronical.com(clone Website)</span>
+                <span>Title :- Instagram(clone Website)</span>
 
               </div>
               <div className='tool'>
-                <span>Tech Stacks </span><span>:- HTML,javaScript,Css</span>
+                <span>Tech Stacks </span>
+                <h2>Client<span>:- React | Redux | Chakra-UI </span></h2>
+                <h2>Server<span>:- Node.js | Express.js | MongoDB </span></h2>
               </div>
               <div className='features'>
-                <span>The main objective of this project is create clone of
-                  " Deccon Chronical.com" website here you can read latest news of all States
+                <span>It is a clone of Instagram social media app, here you can create photogallary, post,profile,follow to friend ,likes or dislikes to post
 
                 </span>
                 <h6>Features:-</h6>
                 <div>
                   <p><ArrowRightIcon />  Authentication</p>
-                  <p><ArrowRightIcon />  Live news</p>
+                  <p><ArrowRightIcon />  Create Post</p>
 
-                  <p><ArrowRightIcon />  navbar</p>
+                  <p><ArrowRightIcon />  Follow to people</p>
+                  <p><ArrowRightIcon />  Like or Dislike to Post</p>
+                  <p><ArrowRightIcon />  Commenting on Post</p>
+                  <p><ArrowRightIcon />  Change Profile picture</p>
                 </div>
 
               </div>
               <div className='links'>
-                <a href="https://github.com/akashkanade9182/MasaiProject" target="_blank" rel="noopener noreferrer"><button>Github</button></a>
-                <a href="https://dainty-biscochitos-f5db9f.netlify.app/" target="_blank" rel="noopener noreferrer"><button>Deploy link</button></a>
+                <a href="https://github.com/akashkanade9182/Insta-clone" target="_blank" rel="noopener noreferrer"><button>Github</button></a>
+                <a href="https://instaclonetrial.netlify.app/" target="_blank" rel="noopener noreferrer"><button>Deploy link</button></a>
 
               </div>
             </div>
