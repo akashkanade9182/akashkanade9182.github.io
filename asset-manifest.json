@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.4e75a65d.css",
-    "main.js": "/static/js/main.ffddb55b.js",
+    "main.js": "/static/js/main.fee1efff.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/Akash-profile-photo.png": "/static/media/Akash-profile-photo.27d4539eb9059bcfb5c8.png",
     "static/media/Akash-Kanade-Resume.pdf": "/static/media/Akash-Kanade-Resume.2ba525956e48ab34d402.pdf",
     "index.html": "/index.html",
     "main.4e75a65d.css.map": "/static/css/main.4e75a65d.css.map",
-    "main.ffddb55b.js.map": "/static/js/main.ffddb55b.js.map",
+    "main.fee1efff.js.map": "/static/js/main.fee1efff.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4e75a65d.css",
-    "static/js/main.ffddb55b.js"
+    "static/js/main.fee1efff.js"
   ]
 }
