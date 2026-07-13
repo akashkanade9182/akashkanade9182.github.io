@@ -1,9 +1,9 @@
+import { useState } from "react";
 import "./App.css";
 import { motion } from "framer-motion";
 import {
   FiArrowRight,
   FiDownload,
-  FiExternalLink,
   FiGithub,
   FiLinkedin,
   FiMail,
@@ -12,6 +12,8 @@ import {
 } from "react-icons/fi";
 import profileImage from "./Pages/Akash-profile-photo.png";
 import resumeFile from "./download/Akash-Kanade-Resume.pdf";
+
+const CONTACT_ENDPOINT = "https://formsubmit.co/ajax/akashkanade235@gmail.com";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -26,7 +28,7 @@ const quickStats = [
   { value: "2+", label: "Years of experience" },
   { value: "4", label: "Product teams contributed to" },
   { value: "10+", label: "Production modules delivered" },
-  { value: "3D + OCR", label: "Specialized product work" },
+  { value: "OCR + Automation", label: "Specialized product work" },
 ];
 
 const experience = [
@@ -35,11 +37,11 @@ const experience = [
     role: "Full Stack Developer",
     duration: "Jan 2025 - Present",
     summary:
-      "Building enterprise workshop software for Germany with 3D inspection, OCR-assisted recognition, reporting, and service workflows.",
+      "Building enterprise workshop software for Germany with inspection workflows, OCR-assisted recognition, reporting, and service operations.",
     highlights: [
       "Developed Ferrari workshop management modules for customers, vehicles, reporting, and service estimation.",
       "Built OCR-based vehicle part recognition and mapping workflows.",
-      "Created interactive 3D vehicle inspection experiences using React Three Fiber and Three.js.",
+      "Created interactive vehicle inspection experiences with advanced frontend tooling.",
       "Designed REST APIs and MongoDB data models for scalable backend flows.",
     ],
   },
@@ -80,9 +82,9 @@ const featuredProjects = [
       "OCR-based assembly diagram recognition",
       "Click-to-highlight part mapping",
       "Damage list and service estimation workflows",
-      "Interactive 3D inspection with animation and isolation mode",
+      "Interactive inspection with animation and isolation mode",
     ],
-    stack: ["React.js", "Node.js", "MongoDB", "React Three Fiber", "Three.js", "OCR"],
+    stack: ["React.js", "Node.js", "MongoDB", "OCR", "Workflow Tools"],
   },
   {
     title: "TABI Marketing Automation Platform",
@@ -140,7 +142,7 @@ const skillGroups = [
   },
   {
     title: "Specialized",
-    items: ["React Three Fiber", "Three.js", "Electron", "OCR", "Git", "Postman"],
+    items: ["Electron", "OCR", "Git", "Postman", "Workflow Design"],
   },
 ];
 
@@ -159,27 +161,9 @@ const education = [
 
 const strengths = [
   "Full stack development for real business products",
-  "3D visualization and interactive product experiences",
+  "Interactive product experiences and workflow design",
   "OCR integration and workflow automation",
   "Database design, APIs, and reporting systems",
-];
-
-const personalProjects = [
-  {
-    title: "GitHub",
-    value: "github.com/akashkanade9182",
-    href: "https://github.com/akashkanade9182",
-  },
-  {
-    title: "LinkedIn",
-    value: "linkedin.com/in/akash-kanade-59ab8218b",
-    href: "https://www.linkedin.com/in/akash-kanade-59ab8218b",
-  },
-  {
-    title: "Email",
-    value: "akashkanade235@gmail.com",
-    href: "mailto:akashkanade235@gmail.com",
-  },
 ];
 
 const fadeUp = {
@@ -204,9 +188,7 @@ const marqueeItems = [
   "MongoDB",
   "PostgreSQL",
   "Prisma ORM",
-  "Three.js",
-  "React Three Fiber",
-  "OCR",
+    "OCR",
   "Workflow Automation",
   "REST APIs",
 ];
@@ -229,6 +211,78 @@ function SectionTitle({ eyebrow, title, description }) {
 }
 
 function App() {
+  const [contactForm, setContactForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [contactStatus, setContactStatus] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleContactChange = (event) => {
+    const { name, value } = event.target;
+    setContactForm((current) => ({
+      ...current,
+      [name]: value,
+    }));
+
+    if (contactStatus) {
+      setContactStatus(null);
+    }
+  };
+
+  const handleContactSubmit = async (event) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setContactStatus(null);
+
+    try {
+      const formData = new FormData();
+      formData.append("name", contactForm.name);
+      formData.append("email", contactForm.email);
+      formData.append("message", contactForm.message);
+      formData.append("_subject", `Portfolio message from ${contactForm.name}`);
+      formData.append("_template", "table");
+      formData.append("_captcha", "false");
+
+      const response = await fetch(CONTACT_ENDPOINT, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(result.message || "Unable to send message right now.");
+      }
+
+      setContactStatus({
+        type: "success",
+        message:
+          "Message sent successfully. If this is the first live submission, confirm the activation email from FormSubmit once to start receiving future messages.",
+      });
+
+      setContactForm({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      setContactStatus({
+        type: "error",
+        message:
+          error instanceof Error
+            ? error.message
+            : "Something went wrong while sending your message. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="app-shell">
       <div className="page-glow page-glow-left" />
@@ -276,15 +330,15 @@ function App() {
               variants={fadeUp}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              Building polished web products, workflow systems, and immersive 3D experiences.
+              Building polished web products, workflow systems, and interactive user experiences.
             </motion.h1>
             <motion.p
               variants={fadeUp}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              I’m Akash Mahadeo Kanade, a full stack developer from Solapur, India with 2+ years
+              I'm Akash Mahadeo Kanade, a full stack developer from Solapur, India with 2+ years
               of experience across enterprise web apps, POS systems, reporting, automation, and
-              React Three Fiber products.
+              complex frontend products.
             </motion.p>
 
             <motion.div
@@ -312,6 +366,16 @@ function App() {
               <div>
                 <FiPhone />
                 <a href="tel:+918668696097">+91 86686 96097</a>
+              </div>
+              <div>
+                <FiLinkedin />
+                <a
+                  href="https://www.linkedin.com/in/akash-kanade-b0ba8a421"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  LinkedIn Profile
+                </a>
               </div>
               <div>
                 <FiMapPin />
@@ -344,7 +408,7 @@ function App() {
                 <span>Core Stack</span>
                 <strong>React, Next.js, Node.js, MongoDB</strong>
               </div>
-              <div className="hero-stamp">Full Stack + 3D</div>
+              <div className="hero-stamp">Full Stack Developer</div>
             </div>
           </motion.div>
         </section>
@@ -392,9 +456,9 @@ function App() {
             >
               <h3>What I bring</h3>
               <p>
-                I’ve worked across marketing automation, workshop management, cinema systems,
-                reporting tools, invoice workflows, and interactive 3D product experiences. That
-                means I’m comfortable moving from UI to API to database design and into
+                I've worked across marketing automation, workshop management, cinema systems,
+                reporting tools, invoice workflows, and interactive product experiences. That
+                means I'm comfortable moving from UI to API to database design and into
                 specialized domains when the product needs it.
               </p>
             </motion.article>
@@ -412,7 +476,7 @@ function App() {
                 <li>I focus on scalable features, not just screens.</li>
                 <li>I enjoy turning complex flows into simple user journeys.</li>
                 <li>I value production stability, performance, and maintainable code.</li>
-                <li>I’m always learning and adapting to new technologies quickly.</li>
+                <li>I'm always learning and adapting to new technologies quickly.</li>
               </ul>
             </motion.article>
           </div>
@@ -421,7 +485,7 @@ function App() {
         <section className="content-section" id="experience">
           <SectionTitle
             eyebrow="Experience"
-            title="Hands-on delivery across product engineering, reporting, automation, and 3D tools."
+            title="Hands-on delivery across product engineering, reporting, automation, and product tools."
             description="A quick view of the teams and responsibilities that shaped my current skill set."
           />
 
@@ -498,7 +562,7 @@ function App() {
           <SectionTitle
             eyebrow="Skills"
             title="A strong full stack foundation with room for specialized product work."
-            description="I’m comfortable across frontend, backend, database, and niche technical areas like OCR and 3D rendering."
+            description="I'm comfortable across frontend, backend, database, and niche technical areas like OCR and workflow automation."
           />
 
           <div className="skills-grid">
@@ -566,8 +630,8 @@ function App() {
         <section className="content-section contact-section" id="contact">
           <SectionTitle
             eyebrow="Contact"
-            title="Let’s build something useful, polished, and reliable."
-            description="If you’re hiring for a full stack role or want help on a product-heavy web project, I’d be happy to connect."
+            title="Let's build something useful, polished, and reliable."
+            description="If you're hiring for a full stack role or want help on a product-heavy web project, I'd be happy to connect."
           />
 
           <div className="contact-panel">
@@ -579,42 +643,118 @@ function App() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.55 }}
             >
+              <span className="contact-kicker">Direct Contact</span>
               <h3>Reach out directly</h3>
+              <p className="contact-copy-intro">
+                If you want to discuss a role, a product build, or freelance work, these are the
+                fastest ways to reach me. I usually reply through my main Gmail inbox. If this
+                form is being used for the first time after deployment, FormSubmit may send one
+                activation email that must be confirmed once.
+              </p>
+
               <div className="contact-links">
-                <a href="mailto:akashkanade235@gmail.com">
-                  <FiMail /> akashkanade235@gmail.com
+                <a className="contact-link-card" href="mailto:akashkanade235@gmail.com">
+                  <FiMail />
+                  <span>akashkanade235@gmail.com</span>
                 </a>
-                <a href="tel:+918668696097">
-                  <FiPhone /> +91 86686 96097
+                <a className="contact-link-card" href="tel:+918668696097">
+                  <FiPhone />
+                  <span>+91 86686 96097</span>
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/akash-kanade-59ab8218b"
+                  className="contact-link-card"
+                  href="https://www.linkedin.com/in/akash-kanade-b0ba8a421"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <FiLinkedin /> LinkedIn Profile
+                  <FiLinkedin />
+                  <span>LinkedIn Profile</span>
                 </a>
-                <a href="https://github.com/akashkanade9182" target="_blank" rel="noreferrer">
-                  <FiGithub /> GitHub Profile
+                <a
+                  className="contact-link-card"
+                  href="https://github.com/akashkanade9182"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FiGithub />
+                  <span>GitHub Profile</span>
                 </a>
+              </div>
+
+              <div className="contact-highlights">
+                <div className="contact-highlight">
+                  <span>Best for</span>
+                  <strong>Hiring, freelance work, and collaboration</strong>
+                </div>
+                <div className="contact-highlight">
+                  <span>Inbox</span>
+                  <strong>Messages go to akashkanade235@gmail.com</strong>
+                </div>
               </div>
             </motion.div>
 
             <motion.div
-              className="contact-cards"
+              className="contact-form-card"
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.55, delay: 0.08 }}
             >
-              {personalProjects.map((item) => (
-                <a key={item.title} className="mini-card" href={item.href} target="_blank" rel="noreferrer">
-                  <span>{item.title}</span>
-                  <strong>{item.value}</strong>
-                  <FiExternalLink />
-                </a>
-              ))}
+              <span>Message Me</span>
+              <h3>Write to me and send the message directly from the website.</h3>
+              <p>
+                Fill in the form and it will be sent directly to `akashkanade235@gmail.com`. If
+                this is the first live message from the site, confirm the one-time FormSubmit
+                activation email once so future messages arrive normally.
+              </p>
+
+              <form className="contact-form" onSubmit={handleContactSubmit}>
+                <label htmlFor="contact-name">Name</label>
+                <input
+                  id="contact-name"
+                  name="name"
+                  type="text"
+                  value={contactForm.name}
+                  onChange={handleContactChange}
+                  placeholder="Your name"
+                  required
+                />
+
+                <label htmlFor="contact-email">Email</label>
+                <input
+                  id="contact-email"
+                  name="email"
+                  type="email"
+                  value={contactForm.email}
+                  onChange={handleContactChange}
+                  placeholder="your@email.com"
+                  required
+                />
+
+                <label htmlFor="contact-message">Message</label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  value={contactForm.message}
+                  onChange={handleContactChange}
+                  placeholder="Tell me about your project or role"
+                  rows="5"
+                  required
+                />
+
+                <div className="contact-form-actions">
+                  <button type="submit" className="primary-btn contact-submit" disabled={isSubmitting}>
+                    {isSubmitting ? "Sending..." : "Send message"}
+                  </button>
+
+                  {contactStatus ? (
+                    <p className={`contact-status contact-status-${contactStatus.type}`}>
+                      {contactStatus.message}
+                    </p>
+                  ) : null}
+                </div>
+              </form>
             </motion.div>
           </div>
         </section>

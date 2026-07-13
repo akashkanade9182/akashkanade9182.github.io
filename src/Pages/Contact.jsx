@@ -64,7 +64,7 @@ function Contact() {
        </div>
        <div className='tool'>
      
-     <BsCursorFill/><div><span >Linked In :- </span><a href="https://www.linkedin.com/in/akash-kanade-59ab8218b" target="_blank" rel="noopener noreferrer"><span>akashkanade</span></a></div>
+     <BsCursorFill/><div><span >Linked In :- </span><a href="https://www.linkedin.com/in/akash-kanade-b0ba8a421" target="_blank" rel="noopener noreferrer"><span>akashkanade</span></a></div>
     </div>
     <div style={{display:"flex",justifyContent:"space-around"}}>
     <a className="bns" href='https://drive.google.com/file/d/1BRNUWLamddp8CBMId1ebBs6p5Tf2K00J/view?usp=share_link'  target="_blank" rel="noopener noreferrer" download><button >
