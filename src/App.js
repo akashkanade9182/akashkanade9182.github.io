@@ -262,7 +262,7 @@ function App() {
       setContactStatus({
         type: "success",
         message:
-          "Message sent successfully. If this is the first live submission, confirm the activation email from FormSubmit once to start receiving future messages.",
+          "Message sent successfully.",
       });
 
       setContactForm({
@@ -647,9 +647,7 @@ function App() {
               <h3>Reach out directly</h3>
               <p className="contact-copy-intro">
                 If you want to discuss a role, a product build, or freelance work, these are the
-                fastest ways to reach me. I usually reply through my main Gmail inbox. If this
-                form is being used for the first time after deployment, FormSubmit may send one
-                activation email that must be confirmed once.
+                fastest ways to reach me. I usually reply through my main Gmail inbox.
               </p>
 
               <div className="contact-links">
@@ -704,9 +702,7 @@ function App() {
               <span>Message Me</span>
               <h3>Write to me and send the message directly from the website.</h3>
               <p>
-                Fill in the form and it will be sent directly to `akashkanade235@gmail.com`. If
-                this is the first live message from the site, confirm the one-time FormSubmit
-                activation email once so future messages arrive normally.
+                Fill in the form and it will be sent directly to `akashkanade235@gmail.com`.
               </p>
 
               <form className="contact-form" onSubmit={handleContactSubmit}>
