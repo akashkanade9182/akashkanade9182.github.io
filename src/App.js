@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./App.css";
 import { motion } from "framer-motion";
 import {
-  FiArrowRight,
   FiDownload,
   FiGithub,
   FiLinkedin,
@@ -18,10 +17,10 @@ const CONTACT_ENDPOINT = "https://formsubmit.co/ajax/akashkanade235@gmail.com";
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
+  { label: "Resume", href: resumeFile, isResume: true },
 ];
 
 const quickStats = [
@@ -144,6 +143,17 @@ const skillGroups = [
     title: "Specialized",
     items: ["Electron", "OCR", "Git", "Postman", "Workflow Design"],
   },
+  {
+    title: "Soft Skills",
+    items: [
+      "Communication",
+      "Problem Solving",
+      "Team Collaboration",
+      "Ownership",
+      "Adaptability",
+      "Time Management",
+    ],
+  },
 ];
 
 const education = [
@@ -180,6 +190,26 @@ const staggerBlock = {
   },
 };
 
+const nameReveal = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.16,
+      delayChildren: 0.08,
+    },
+  },
+};
+
+const nameLine = {
+  hidden: { opacity: 0, y: 34, filter: "blur(10px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.85, ease: "easeOut" },
+  },
+};
+
 const marqueeItems = [
   "React.js",
   "Next.js",
@@ -188,7 +218,7 @@ const marqueeItems = [
   "MongoDB",
   "PostgreSQL",
   "Prisma ORM",
-    "OCR",
+  "OCR",
   "Workflow Automation",
   "REST APIs",
 ];
@@ -218,6 +248,22 @@ function App() {
   });
   const [contactStatus, setContactStatus] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleResumeClick = (event) => {
+    event.preventDefault();
+
+    const newTab = window.open(resumeFile, "_blank", "noopener,noreferrer");
+    if (newTab) {
+      newTab.opener = null;
+    }
+
+    const downloadLink = document.createElement("a");
+    downloadLink.href = resumeFile;
+    downloadLink.download = "Akash-Kanade-Resume.pdf";
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    downloadLink.remove();
+  };
 
   const handleContactChange = (event) => {
     const { name, value } = event.target;
@@ -261,8 +307,7 @@ function App() {
 
       setContactStatus({
         type: "success",
-        message:
-          "Message sent successfully.",
+        message: "Message sent successfully.",
       });
 
       setContactForm({
@@ -289,27 +334,38 @@ function App() {
       <div className="page-glow page-glow-right" />
       <div className="page-grid" />
 
-      <header className="site-header">
-        <a className="brand-mark" href="#home">
-          <span>AK</span>
-          <div>
-            <strong>Akash Kanade</strong>
-            <small>Full Stack Developer</small>
-          </div>
-        </a>
+      <div className="header-shell">
+        <header className="site-header">
+          <a className="brand-mark" href="#home">
+            <span>AK</span>
+            <div>
+              <strong>Akash Kanade</strong>
+              <small>Full Stack Developer</small>
+            </div>
+          </a>
 
-        <nav className="main-nav" aria-label="Primary navigation">
-          {navLinks.map((link) => (
-            <a key={link.href} href={link.href}>
-              {link.label}
-            </a>
-          ))}
-        </nav>
-
-        <a className="header-cta" href={resumeFile} target="_blank" rel="noreferrer">
-          Resume
-        </a>
-      </header>
+          <nav className="main-nav" aria-label="Primary navigation">
+            {navLinks.map((link) =>
+              link.isResume ? (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={handleResumeClick}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="Akash-Kanade-Resume.pdf"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <a key={link.label} href={link.href}>
+                  {link.label}
+                </a>
+              ),
+            )}
+          </nav>
+        </header>
+      </div>
 
       <main>
         <section className="hero-section" id="home">
@@ -322,23 +378,30 @@ function App() {
             <motion.span
               className="hero-badge"
               variants={fadeUp}
-              transition={{ duration: 0.6, ease: "easeOut" }}
+              transition={{ duration: 0.55, ease: "easeOut" }}
             >
-              Available for impactful full stack roles
+              Full Stack Developer
             </motion.span>
             <motion.h1
-              variants={fadeUp}
-              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="hero-title"
+              variants={nameReveal}
             >
-              Building polished web products, workflow systems, and interactive user experiences.
+              <motion.span className="hero-name-line" variants={nameLine}>
+                Akash
+              </motion.span>
+              <motion.span className="hero-name-line hero-name-accent" variants={nameLine}>
+                Kanade
+              </motion.span>
             </motion.h1>
             <motion.p
+              className="hero-intro hero-bio-inline"
               variants={fadeUp}
-              transition={{ duration: 0.7, ease: "easeOut" }}
+              transition={{ duration: 0.8, delay: 0.18, ease: "easeOut" }}
             >
-              I'm Akash Mahadeo Kanade, a full stack developer from Solapur, India with 2+ years
-              of experience across enterprise web apps, POS systems, reporting, automation, and
-              complex frontend products.
+              Full Stack Developer with 2+ years of experience building enterprise
+              web applications, dashboards, workflow systems, OCR-driven
+              automation, and reporting tools using React, Next.js, Node.js,
+              and MongoDB.
             </motion.p>
 
             <motion.div
@@ -346,69 +409,38 @@ function App() {
               variants={fadeUp}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              <a className="primary-btn" href="#projects">
-                View work <FiArrowRight />
+              <a
+                className="primary-btn"
+                href={resumeFile}
+                onClick={handleResumeClick}
+                target="_blank"
+                rel="noreferrer"
+                download="Akash-Kanade-Resume.pdf"
+              >
+                <FiDownload /> View Resume
               </a>
-              <a className="secondary-btn" href={resumeFile} target="_blank" rel="noreferrer">
-                <FiDownload /> Download resume
-              </a>
-            </motion.div>
-
-            <motion.div
-              className="hero-meta"
-              variants={fadeUp}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-            >
-              <div>
-                <FiMail />
-                <a href="mailto:akashkanade235@gmail.com">akashkanade235@gmail.com</a>
-              </div>
-              <div>
-                <FiPhone />
-                <a href="tel:+918668696097">+91 86686 96097</a>
-              </div>
-              <div>
-                <FiLinkedin />
-                <a
-                  href="https://www.linkedin.com/in/akash-kanade-b0ba8a421"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  LinkedIn Profile
-                </a>
-              </div>
-              <div>
-                <FiMapPin />
-                <span>Solapur, India</span>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="hero-scroll-cue"
-              variants={fadeUp}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-            >
-              <span>Scroll to explore</span>
-              <div className="scroll-line" />
             </motion.div>
           </motion.div>
 
           <motion.div
             className="hero-visual"
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
+            initial={{ opacity: 0, x: 40, scale: 0.94 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.85, delay: 0.2, ease: "easeOut" }}
           >
-            <div className="portrait-card">
-              <div className="portrait-ring" />
-              <div className="hero-orbit hero-orbit-one" />
-              <div className="hero-orbit hero-orbit-two" />
-              <img src={profileImage} alt="Akash Kanade" />
-              <div className="floating-panel">
-                <span>Core Stack</span>
-                <strong>React, Next.js, Node.js, MongoDB</strong>
+            <div className="hero-visual-stack">
+              <div className="portrait-card">
+                <div className="portrait-ring" />
+                <div className="hero-orbit hero-orbit-one" />
+                <div className="hero-orbit hero-orbit-two" />
+                <img src={profileImage} alt="Akash Kanade" />
+                <div className="floating-panel">
+                  <span>Core Stack</span>
+                  <strong>React, Next.js, Node.js, MongoDB</strong>
+                </div>
+                <div className="hero-stamp">Full Stack Developer</div>
               </div>
-              <div className="hero-stamp">Full Stack Developer</div>
+
             </div>
           </motion.div>
         </section>
@@ -456,9 +488,9 @@ function App() {
             >
               <h3>What I bring</h3>
               <p>
-                I've worked across marketing automation, workshop management, cinema systems,
+                I&apos;ve worked across marketing automation, workshop management, cinema systems,
                 reporting tools, invoice workflows, and interactive product experiences. That
-                means I'm comfortable moving from UI to API to database design and into
+                means I&apos;m comfortable moving from UI to API to database design and into
                 specialized domains when the product needs it.
               </p>
             </motion.article>
@@ -476,93 +508,53 @@ function App() {
                 <li>I focus on scalable features, not just screens.</li>
                 <li>I enjoy turning complex flows into simple user journeys.</li>
                 <li>I value production stability, performance, and maintainable code.</li>
-                <li>I'm always learning and adapting to new technologies quickly.</li>
+                <li>I&apos;m always learning and adapting to new technologies quickly.</li>
               </ul>
             </motion.article>
           </div>
-        </section>
 
-        <section className="content-section" id="experience">
-          <SectionTitle
-            eyebrow="Experience"
-            title="Hands-on delivery across product engineering, reporting, automation, and product tools."
-            description="A quick view of the teams and responsibilities that shaped my current skill set."
-          />
+          <div className="experience-block">
+            <SectionTitle
+              eyebrow="Experience"
+              title="Career progression across product engineering, reporting, and automation."
+              description="A quick view of the teams and responsibilities that shaped my current skill set."
+            />
 
-          <div className="timeline">
-            {experience.map((item, index) => (
-              <motion.article
-                key={`${item.company}-${item.duration}`}
-                className="timeline-card"
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.55, delay: index * 0.08 }}
-              >
-                <div className="timeline-meta">
-                  <span>{item.duration}</span>
-                  <h3>{item.role}</h3>
-                  <p>{item.company}</p>
-                </div>
-                <div className="timeline-body">
-                  <p>{item.summary}</p>
-                  <ul className="feature-list">
-                    {item.highlights.map((point) => (
-                      <li key={point}>{point}</li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.article>
-            ))}
-          </div>
-        </section>
-
-        <section className="content-section" id="projects">
-          <SectionTitle
-            eyebrow="Project Highlights"
-            title="Work that reflects the kind of systems I enjoy building."
-            description="These highlights come directly from my recent experience and show both technical depth and business impact."
-          />
-
-          <div className="project-grid">
-            {featuredProjects.map((project, index) => (
-              <motion.article
-                key={project.title}
-                className="project-card"
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.55, delay: index * 0.08 }}
-              >
-                <div className="project-head">
-                  <span>{project.tag}</span>
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                </div>
-                <ul className="feature-list">
-                  {project.points.map((point) => (
-                    <li key={point}>{point}</li>
-                  ))}
-                </ul>
-                <div className="chip-wrap">
-                  {project.stack.map((tech) => (
-                    <span key={tech} className="chip">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </motion.article>
-            ))}
+            <div className="timeline">
+              {experience.map((item, index) => (
+                <motion.article
+                  key={`${item.company}-${item.duration}`}
+                  className="timeline-card"
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, amount: 0.25 }}
+                  transition={{ duration: 0.55, delay: index * 0.08 }}
+                >
+                  <div className="timeline-meta">
+                    <span>{item.duration}</span>
+                    <h3>{item.role}</h3>
+                    <p>{item.company}</p>
+                  </div>
+                  <div className="timeline-body">
+                    <p>{item.summary}</p>
+                    <ul className="feature-list">
+                      {item.highlights.map((point) => (
+                        <li key={point}>{point}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
           </div>
         </section>
 
         <section className="content-section skills-section" id="skills">
           <SectionTitle
             eyebrow="Skills"
-            title="A strong full stack foundation with room for specialized product work."
-            description="I'm comfortable across frontend, backend, database, and niche technical areas like OCR and workflow automation."
+            title="Technical skills supported by strong communication and collaboration."
+            description="This section covers both technical and soft skills, including frontend, backend, databases, product tooling, and the way I work with teams."
           />
 
           <div className="skills-grid">
@@ -627,11 +619,51 @@ function App() {
           </div>
         </section>
 
+        <section className="content-section" id="projects">
+          <SectionTitle
+            eyebrow="Project Highlights"
+            title="Four project highlights that reflect the systems I enjoy building."
+            description="These highlights come directly from my recent experience and show both technical depth and business impact."
+          />
+
+          <div className="project-grid">
+            {featuredProjects.map((project, index) => (
+              <motion.article
+                key={project.title}
+                className="project-card"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.55, delay: index * 0.08 }}
+              >
+                <div className="project-head">
+                  <span>{project.tag}</span>
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                </div>
+                <ul className="feature-list">
+                  {project.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+                <div className="chip-wrap">
+                  {project.stack.map((tech) => (
+                    <span key={tech} className="chip">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </motion.article>
+            ))}
+          </div>
+        </section>
+
         <section className="content-section contact-section" id="contact">
           <SectionTitle
             eyebrow="Contact"
-            title="Let's build something useful, polished, and reliable."
-            description="If you're hiring for a full stack role or want help on a product-heavy web project, I'd be happy to connect."
+            title="Let&apos;s build something useful, polished, and reliable."
+            description="If you&apos;re hiring for a full stack role or want help on a product-heavy web project, I&apos;d be happy to connect."
           />
 
           <div className="contact-panel">
@@ -685,8 +717,10 @@ function App() {
                   <strong>Hiring, freelance work, and collaboration</strong>
                 </div>
                 <div className="contact-highlight">
-                  <span>Inbox</span>
-                  <strong>Messages go to akashkanade235@gmail.com</strong>
+                  <span>Location</span>
+                  <strong>
+                    <FiMapPin /> Solapur, India
+                  </strong>
                 </div>
               </div>
             </motion.div>
@@ -701,9 +735,7 @@ function App() {
             >
               <span>Message Me</span>
               <h3>Write to me and send the message directly from the website.</h3>
-              <p>
-                Fill in the form and it will be sent directly to `akashkanade235@gmail.com`.
-              </p>
+              <p>Fill in the form and it will be sent directly to `akashkanade235@gmail.com`.</p>
 
               <form className="contact-form" onSubmit={handleContactSubmit}>
                 <label htmlFor="contact-name">Name</label>
@@ -760,3 +792,20 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
