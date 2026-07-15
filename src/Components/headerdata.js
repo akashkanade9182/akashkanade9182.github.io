@@ -1,6 +1,6 @@
-import "../download/Akash-Kanade-Resume.pdf"
+import "../download/Akash_Kanade_Resume.pdf"
 
 export const headerData = {
   
-    resumePdf:"Akash-Kanade-Resume.pdf"
+    resumePdf:"Akash_Kanade_Resume.pdf"
 }

@@ -10,7 +10,7 @@ import {
   FiPhone,
 } from "react-icons/fi";
 import profileImage from "./Pages/Akash-profile-photo.png";
-import resumeFile from "./download/Akash-Kanade-Resume.pdf";
+import resumeFile from "./download/Akash_Kanade_Resume.pdf";
 
 const CONTACT_ENDPOINT = "https://formsubmit.co/ajax/akashkanade235@gmail.com";
 
@@ -259,7 +259,7 @@ function App() {
 
     const downloadLink = document.createElement("a");
     downloadLink.href = resumeFile;
-    downloadLink.download = "Akash-Kanade-Resume.pdf";
+    downloadLink.download = "Akash_Kanade_Resume.pdf";
     document.body.appendChild(downloadLink);
     downloadLink.click();
     downloadLink.remove();
@@ -353,7 +353,7 @@ function App() {
                   onClick={handleResumeClick}
                   target="_blank"
                   rel="noopener noreferrer"
-                  download="Akash-Kanade-Resume.pdf"
+                  download="Akash_Kanade_Resume.pdf"
                 >
                   {link.label}
                 </a>
@@ -415,7 +415,7 @@ function App() {
                 onClick={handleResumeClick}
                 target="_blank"
                 rel="noreferrer"
-                download="Akash-Kanade-Resume.pdf"
+                download="Akash_Kanade_Resume.pdf"
               >
                 <FiDownload /> View Resume
               </a>
